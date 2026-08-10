@@ -1,1 +1,26 @@
 site_name: EMIT Archive
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  font:
+    text: Inter
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - search.highlight
+nav:
+  - Home: index.md
+  - Blast Modules: blastmodules.md
+  - Whole Self Seminars: wholeselfseminars.md
+  - Summer School:  summerschools.md
+  - Resources: resources.md
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
