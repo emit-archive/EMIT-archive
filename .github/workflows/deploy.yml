@@ -1,19 +1,26 @@
-name: Deploy MkDocs
-on:
-  push:
-    branches:
-      - main
-permissions:
-  contents: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-      - run: pip install mkdocs mkdocs-material
-      - run: mkdocs gh-deploy --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+site_name: EMIT Archive
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  font:
+    text: Inter
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - search.highlight
+nav:
+  - Home: index.md
+  - Blast Modules: blastmodules.md
+  - Whole Self Seminars: wholeselfseminars.md
+  - Summer School:  summerschools.md
+  - Resources: resources.md
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
